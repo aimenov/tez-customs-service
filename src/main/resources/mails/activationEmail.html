@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="#{email.activation.title}"></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="shortcut icon" href="${baseUrl}/favicon.ico" />
+</head>
+<body>
+<p th:text="#{email.activation.greeting}">
+  Dear
+</p>
+<p th:text="#{email.activation.text0}">
+</p>
+<p th:text="#{email.activation.text1}">
+</p>
+<p>
+  <a th:href="@{|http://${baseUrl}/api/service/auth/activate?key=${user.activationKey}|}"
+     th:text="@{|http://${baseUrl}/api/service/auth/activate?key=${user.activationKey}|}">Activation Link</a>
+</p>
+<p th:text="#{email.activation.text2}"> Expire time 24 hours </p>
+<!--<p>-->
+<!--  <span th:text="#{email.activation.text3}">Regards, </span>-->
+<!--  <br/>-->
+<!--  <em th:text="#{email.signature}"></em>-->
+<!--  <em th:text="#{email.disclaimer}"></em>-->
+<!--</p>-->
+</body>
+</html>
